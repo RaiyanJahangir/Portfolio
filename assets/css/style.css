@@ -1996,19 +1996,18 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .resume-heading {
   display: flex;
-  justify-content: space-between; /* Resume left, icon right */
+  justify-content: space-between; /* Resume left, button right */
   align-items: center;            /* vertical alignment */
+  width: 100%;                    /* take full row width */
 }
 
-
-
 .resume-heading .article-title {
-  margin: 0; 
+  margin: 0; /* remove extra spacing */
 }
 
 .download-link {
   color: var(--orange-yellow-crayola);
-  font-size: 24px;
+  font-size: 32px;
   transition: color var(--transition-1);
   display: flex;
   align-items: center;
@@ -2017,6 +2016,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 .download-link:hover {
   color: var(--light-gray);
 }
+
 
 
 
