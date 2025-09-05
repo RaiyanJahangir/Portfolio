@@ -1984,6 +1984,35 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
+.title-wrapper {
+  display: inline-flex;       /* keep it inline, not stretched */
+  align-items: center;        /* vertical alignment */
+  gap: 8px;                   /* small space between text and icon */
+}
+
+
+.download-link {
+  color: var(--orange-yellow-crayola);
+  font-size: 22px;
+  transition: color var(--transition-1);
+  display: flex;
+  align-items: center;
+}
+
+.download-link:hover {
+  color: var(--light-gray);
+}
+
+.resume-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between Resume text and icon */
+}
+
+.resume-heading .article-title {
+  margin: 0; /* remove extra spacing */
+}
+
 
 
 
