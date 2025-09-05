@@ -1991,9 +1991,24 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 
+
+
+
+.resume-heading {
+  display: flex;
+  justify-content: space-between; /* Resume left, icon right */
+  align-items: center;            /* vertical alignment */
+}
+
+
+
+.resume-heading .article-title {
+  margin: 0; 
+}
+
 .download-link {
   color: var(--orange-yellow-crayola);
-  font-size: 22px;
+  font-size: 24px;
   transition: color var(--transition-1);
   display: flex;
   align-items: center;
@@ -2003,15 +2018,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   color: var(--light-gray);
 }
 
-.resume-heading {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* space between Resume text and icon */
-}
-
-.resume-heading .article-title {
-  margin: 0; /* remove extra spacing */
-}
 
 
 
