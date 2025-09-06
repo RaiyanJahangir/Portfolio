@@ -129,7 +129,9 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
-img, ion-icon, a, button, time, span { display: block; }
+img, ion-icon, button, time, span { display: block; }
+
+/* img, ion-icon, a, button, time, span { display: block; } */
 
 button {
   font: inherit;
@@ -1719,44 +1721,148 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-  /**
-   * ABOUT
-   */
+/**
+  * ABOUT
+  */
 
-  /* service */
+/* service */
 
-  .service-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 25px;
-  }
+.service-list {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 25px;
+}
 
-  /* testimonials */
+/* testimonials */
 
-  .testimonials-item { min-width: calc(50% - 15px); }
+.testimonials-item { min-width: calc(50% - 15px); }
 
-  /* clients */
+/* clients */
 
-  .clients-item { min-width: calc(25% - 38px); }
-
-
-
-  /**
-   * PORTFOLIO
-   */
-
-  .project-list { grid-template-columns: repeat(3, 1fr); }
+.clients-item { min-width: calc(25% - 38px); }
 
 
 
-  /**
-   * BLOG
-   */
+/**
+  * PORTFOLIO
+  */
 
-  .blog-banner-box { height: 230px; }
+.project-list { grid-template-columns: repeat(3, 1fr); }
+
+
+
+/**
+  * BLOG
+  */
+
+.blog-banner-box { height: 230px; }
 
 }
 
+/* MY ADDITIONS */
+.inline-link {
+  display: inline;
+}
 
+.themed-inline-link {
+  display: inline;
+  color: var(--orange-yellow-crayola);     /* yellow accent */
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-400);
+  text-decoration: none;                   /* remove default underline */
+  transition: color var(--transition-1), 
+  text-decoration var(--transition-1);
+}
+
+.themed-inline-link:hover {
+  color: var(--light-gray);                /* soft hover effect */
+  text-decoration: underline;              /* underline on hover */
+}
+
+.themed-inline-link:visited {
+  color: var(--vegas-gold);                /* subtle color for visited links */
+}
+
+/* ——— Paper Highlight ——— */
+/* Make the grid row height be the tallest child (the text),
+   then stretch the media box to match that height */
+.paper-highlight {
+  display: grid;
+  grid-template-columns: 1fr;  /* stack on mobile */
+  gap: 18px;
+  align-items: stretch;         /* important: both columns same row height */
+}
+
+/* Media box that matches the row height and centers the image inside */
+.paper-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;                 /* match the grid row height (set by text) */
+  border: 1px solid var(--jet);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-gradient-onyx);
+  min-height: 140px;            /* optional: avoid tiny images for very short text */
+}
+
+/* Show the whole image without cropping; scale down if needed */
+.paper-media img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;                 /* preserve aspect ratio */
+  width: auto;                  /* preserve aspect ratio */
+  object-fit: contain;          /* ensure full image is visible */
+  display: block;
+}
+
+.paper-highlight:hover .paper-media img { transform: scale(1.03); }
+
+/* Text block */
+.paper-content {
+  display: grid;
+  gap: 10px;
+}
+
+.paper-title {
+  color: var(--orange-yellow-crayola); /* solid accent yellow */
+  font-weight: var(--fw-600);
+}
+
+.paper-summary {
+  font-weight: var(--fw-300);
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.65;
+}
+
+.title-wrapper {
+  display: inline-flex;       /* keep it inline, not stretched */
+  align-items: center;        /* vertical alignment */
+  gap: 8px;                   /* small space between text and icon */
+}
+
+.resume-heading {
+  display: flex;
+  justify-content: space-between; /* Resume left, button right */
+  align-items: center;            /* vertical alignment */
+  width: 100%;                    /* take full row width */
+}
+
+.resume-heading .article-title {
+  margin: 0; /* remove extra spacing */
+}
+
+.download-link {
+  color: var(--orange-yellow-crayola);
+  font-size: 32px;
+  transition: color var(--transition-1);
+  display: flex;
+  align-items: center;
+}
+
+.download-link:hover {
+  color: var(--light-gray);
+}
 
 
 
@@ -1873,87 +1979,23 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-  /**
-	 * RESUME
-	 */
+/**
+  * RESUME
+  */
 
-  .timeline-text { max-width: 700px; }
+.timeline-text { max-width: 700px; }
 
-  /* MY ADDITIONS */
-  .inline-link {
-  display: inline;
+}
+
+
+
+/* On narrow screens, let image be full-width above text */
+@media (max-width: 767px) {
+  .paper-media { height: auto; }
+  .paper-media img {
+    width: 100%;
+    height: auto;
   }
-
-  .themed-inline-link {
-  display: inline;
-  color: var(--orange-yellow-crayola);     /* yellow accent */
-  font-family: var(--ff-poppins);
-  font-weight: var(--fw-400);
-  text-decoration: none;                   /* remove default underline */
-  transition: color var(--transition-1), 
-              text-decoration var(--transition-1);
-}
-
-.themed-inline-link:hover {
-  color: var(--light-gray);                /* soft hover effect */
-  text-decoration: underline;              /* underline on hover */
-}
-
-.themed-inline-link:visited {
-  color: var(--vegas-gold);                /* subtle color for visited links */
-}
-
-
-
-/* ——— Paper Highlight ——— */
-/* Make the grid row height be the tallest child (the text),
-   then stretch the media box to match that height */
-.paper-highlight {
-  display: grid;
-  grid-template-columns: 1fr;  /* stack on mobile */
-  gap: 18px;
-  align-items: stretch;         /* important: both columns same row height */
-}
-
-/* Media box that matches the row height and centers the image inside */
-.paper-media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;                 /* match the grid row height (set by text) */
-  border: 1px solid var(--jet);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--bg-gradient-onyx);
-  min-height: 140px;            /* optional: avoid tiny images for very short text */
-}
-
-/* Show the whole image without cropping; scale down if needed */
-.paper-media img {
-  max-height: 100%;
-  max-width: 100%;
-  height: auto;                 /* preserve aspect ratio */
-  width: auto;                  /* preserve aspect ratio */
-  object-fit: contain;          /* ensure full image is visible */
-  display: block;
-}
-
-.paper-highlight:hover .paper-media img { transform: scale(1.03); }
-
-/* Text block */
-.paper-content {
-  display: grid;
-  gap: 10px;
-}
-.paper-title {
-  color: var(--orange-yellow-crayola); /* solid accent yellow */
-  font-weight: var(--fw-600);
-}
-.paper-summary {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  line-height: 1.65;
 }
 
 /* Side-by-side on wider screens; image auto-fits to text height */
@@ -1973,53 +2015,4 @@ textarea.form-input::-webkit-resizer { display: none; }
     height: auto;
     object-fit: contain;               /* keep full image visible */
   }
-}
-
-/* On narrow screens, let image be full-width above text */
-@media (max-width: 767px) {
-  .paper-media { height: auto; }
-  .paper-media img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.title-wrapper {
-  display: inline-flex;       /* keep it inline, not stretched */
-  align-items: center;        /* vertical alignment */
-  gap: 8px;                   /* small space between text and icon */
-}
-
-
-
-
-
-.resume-heading {
-  display: flex;
-  justify-content: space-between; /* Resume left, button right */
-  align-items: center;            /* vertical alignment */
-  width: 100%;                    /* take full row width */
-}
-
-.resume-heading .article-title {
-  margin: 0; /* remove extra spacing */
-}
-
-.download-link {
-  color: var(--orange-yellow-crayola);
-  font-size: 32px;
-  transition: color var(--transition-1);
-  display: flex;
-  align-items: center;
-}
-
-.download-link:hover {
-  color: var(--light-gray);
-}
-
-
-
-
-
-
 }
